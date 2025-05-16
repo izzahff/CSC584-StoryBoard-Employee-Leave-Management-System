@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Login - IMNSB Employee Leave Management System</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-card">
+            <div class="logo-container">
+                <img src="../img/logo.png" alt="IMNSB Logo" class="logo">
+                <div class="logo-text">
+                    <h1>Welcome to IMNSB</h1>
+                    <p>Manager Portal</p>
+                </div>
+            </div>
+            
+            <div class="auth-form">
+                <h2>Manager Log In</h2>
+                <div class="auth-links">
+                    <a href="signup.html" class="auth-link">Sign Up</a>
+                    <a href="#" class="auth-link active">Log In</a>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="text" id="employeeId" name="employeeId" placeholder="Manager ID" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group forgot-password">
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                    </div>
+                </form>
+                
+                <div class="back-link">
+                    <a href="../index.html">&larr; Change Role</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

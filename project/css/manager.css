@@ -1,0 +1,239 @@
+/* Manager Portal Styles */
+.manager-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.manager-card-header {
+    padding: 1.2rem 1.5rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.manager-card-header h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.manager-card-content {
+    padding: 1.5rem;
+}
+
+/* Leave Requests Styles */
+.leave-requests-container {
+    margin: 1rem;
+}
+
+.leave-requests-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.leave-requests-header {
+    padding: 1.2rem 1.5rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leave-requests-header h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.leave-requests-content {
+    padding: 1.5rem;
+}
+
+/* Leave Request Details Styles */
+.leave-request-details {
+    margin: 1rem;
+}
+
+.leave-request-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.leave-request-header {
+    padding: 1.2rem 1.5rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leave-request-header h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.leave-request-content {
+    padding: 1.5rem;
+}
+
+.detail-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.detail-section h4 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.detail-group {
+    display: flex;
+    margin-bottom: 0.8rem;
+}
+
+.detail-group label {
+    font-weight: 600;
+    min-width: 150px;
+    color: var(--text-light);
+}
+
+.detail-group p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: flex-end;
+}
+
+.action-buttons .btn {
+    min-width: 120px;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+}
+
+.leave-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leave-table th,
+.leave-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.leave-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.leave-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-badge.pending {
+    background-color: #ffeaa7;
+    color: #d69e2e;
+}
+
+.status-badge.approved {
+    background-color: #c6f6d5;
+    color: #2f855a;
+}
+
+.status-badge.rejected {
+    background-color: #fed7d7;
+    color: #c53030;
+}
+
+.status-badge.cancelled {
+    background-color: #e2e8f0;
+    color: #718096;
+}
+
+/* Sidebar Overrides for Manager */
+.sidebar {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.main-content {
+    margin-left: 280px;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.expanded {
+    margin-left: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .sidebar-toggle {
+        display: flex;
+    }
+    
+    .detail-group {
+        flex-direction: column;
+    }
+    
+    .detail-group label {
+        margin-bottom: 0.3rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .action-buttons .btn {
+        width: 100%;
+    }
+}

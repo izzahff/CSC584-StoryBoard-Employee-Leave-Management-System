@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave History - IMNSB Employee Leave Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="img/logo.png" alt="IMNSB Logo" class="sidebar-logo">
+                <h3>IMNSB</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                </li>
+                <li>
+                    <a href="apply-leave.html"><i class="fas fa-calendar-plus"></i> Apply Leave</a>
+                </li>
+                <li class="active">
+                    <a href="leave-history.html"><i class="fas fa-history"></i> Leave History</a>
+                </li>
+                <li>
+                    <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                </li>
+                <li class="logout">
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Leave History</h2>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span id="userName">John Doe</span>
+                        <div class="user-avatar">
+                            <img src="img/avatar.png" alt="User Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-body">
+                <div class="leave-history-container">
+                    <div class="leave-history-filters">
+                        <div class="filter-group">
+                            <label for="filterYear">Year:</label>
+                            <select id="filterYear">
+                                <option value="all">All</option>
+                                <option value="2025">2025</option>
+                                <option value="2024" selected>2024</option>
+                                <option value="2023">2023</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterStatus">Status:</label>
+                            <select id="filterStatus">
+                                <option value="all">All</option>
+                                <option value="pending">Pending</option>
+                                <option value="approved">Approved</option>
+                                <option value="rejected">Rejected</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterType">Leave Type:</label>
+                            <select id="filterType">
+                                <option value="all">All</option>
+                                <option value="annual">Annual</option>
+                                <option value="sick">Sick</option>
+                                <option value="maternity">Maternity</option>
+                                <option value="paternity">Paternity</option>
+                                <option value="bereavement">Bereavement</option>
+                                <option value="unpaid">Unpaid</option>
+                            </select>
+                        </div>
+                        <button id="resetFilters" class="btn btn-secondary">Reset Filters</button>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="leave-table">
+                            <thead>
+                                <tr>
+                                    <th>Application ID</th>
+                                    <th>Leave Type</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Duration</th>
+                                    <th>Applied On</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaveHistoryTable">
+                                <!-- This will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button id="prevPage" class="btn btn-secondary" disabled>Previous</button>
+                        <span id="currentPage">Page 1 of 1</span>
+                        <button id="nextPage" class="btn btn-secondary" disabled>Next</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/leave-history.js"></script>
+</body>
+</html>

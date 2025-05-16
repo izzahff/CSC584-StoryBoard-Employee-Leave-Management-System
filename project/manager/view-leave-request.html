@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Leave Request - IMNSB Employee Leave Management System</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/manager.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Manager Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="../img/logo.png" alt="IMNSB Logo" class="sidebar-logo">
+                <h3>IMNSB Manager</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                </li>
+                <li class="active">
+                    <a href="leave-requests.html"><i class="fas fa-clipboard-list"></i> Leave Requests</a>
+                </li>
+                <li>
+                    <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                </li>
+                <li class="logout">
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>View Leave Request</h2>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span id="userName">Manager Name</span>
+                        <div class="user-avatar">
+                            <img src="../img/avatar.png" alt="Manager Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-body">
+                <div class="leave-request-details">
+                    <div class="leave-request-card">
+                        <div class="leave-request-header">
+                            <h3>Leave Request Details</h3>
+                            <button id="printBtn" class="btn btn-secondary">
+                                <i class="fas fa-print"></i> Print
+                            </button>
+                        </div>
+                        <div class="leave-request-content">
+                            <div class="detail-section">
+                                <h4>Employee Information</h4>
+                                <div class="detail-group">
+                                    <label>Employee Name:</label>
+                                    <span id="employeeName"></span>
+                                </div>
+                                <div class="detail-group">
+                                    <label>Email:</label>
+                                    <span id="employeeEmail"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-section">
+                                <h4>Leave Details</h4>
+                                <div class="detail-group">
+                                    <label>Leave Type:</label>
+                                    <span id="leaveType"></span>
+                                </div>
+                                <div class="detail-group">
+                                    <label>Start Date:</label>
+                                    <span id="startDate"></span>
+                                </div>
+                                <div class="detail-group">
+                                    <label>End Date:</label>
+                                    <span id="endDate"></span>
+                                </div>
+                                <div class="detail-group">
+                                    <label>Duration:</label>
+                                    <span id="duration"></span>
+                                </div>
+                                <div class="detail-group">
+                                    <label>Applied Date:</label>
+                                    <span id="appliedDate"></span>
+                                </div>
+                                <div class="detail-group">
+                                    <label>Status:</label>
+                                    <span id="status"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-section">
+                                <h4>Additional Information</h4>
+                                <div class="detail-group">
+                                    <label>Description:</label>
+                                    <p id="description"></p>
+                                </div>
+                            </div>
+                            
+                            <div class="action-buttons">
+                                <button id="rejectBtn" class="btn btn-danger">
+                                    <i class="fas fa-times"></i> Reject
+                                </button>
+                                <button id="approveBtn" class="btn btn-success">
+                                    <i class="fas fa-check"></i> Approve
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/manager/view-leave-request.js"></script>
+</body>
+</html>

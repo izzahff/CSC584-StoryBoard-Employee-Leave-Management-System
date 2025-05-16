@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Report - IMNSB Employee Leave Management System</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Admin Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="../img/logo.png" alt="IMNSB Logo" class="sidebar-logo">
+                <h3>IMNSB Admin</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                </li>
+                <li>
+                    <a href="approval-managers.html"><i class="fas fa-user-tie"></i> Approval Managers</a>
+                </li>
+                <li>
+                    <a href="employees.html"><i class="fas fa-users"></i> Employees</a>
+                </li>
+                <li>
+                    <a href="leave-types.html"><i class="fas fa-list-alt"></i> Leave Types</a>
+                </li>
+                <li>
+                    <a href="leave-requests.html"><i class="fas fa-clipboard-list"></i> Leave Requests</a>
+                </li>
+                <li class="active">
+                    <a href="view-report.html"><i class="fas fa-chart-bar"></i> View Report</a>
+                </li>
+                <li class="logout">
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Employee Leave Report</h2>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span id="userName">Admin Name</span>
+                        <div class="user-avatar">
+                            <img src="../img/avatar.png" alt="Admin Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-body">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3>Leave Applications Report</h3>
+                        <button class="btn btn-primary" id="exportBtn">
+                            <i class="fas fa-download"></i> Export Report
+                        </button>
+                    </div>
+                    <div class="admin-card-content">
+                        <div class="search-filter">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="dateFrom">From Date</label>
+                                    <input type="date" id="dateFrom" name="dateFrom">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dateTo">To Date</label>
+                                    <input type="date" id="dateTo" name="dateTo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="employeeFilter">Employee</label>
+                                    <select id="employeeFilter">
+                                        <option value="">All Employees</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="leaveTypeFilter">Leave Type</label>
+                                    <select id="leaveTypeFilter">
+                                        <option value="">All Types</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="statusFilter">Status</label>
+                                    <select id="statusFilter">
+                                        <option value="">All Status</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="approved">Approved</option>
+                                        <option value="rejected">Rejected</option>
+                                        <option value="cancelled">Cancelled</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button id="applyFilters" class="btn btn-primary">
+                                    <i class="fas fa-filter"></i> Apply Filters
+                                </button>
+                                <button id="resetFilters" class="btn btn-secondary">
+                                    <i class="fas fa-undo"></i> Reset Filters
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Employee Name</th>
+                                        <th>Leave Type</th>
+                                        <th>Days</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reportTable">
+                                    <!-- Will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/admin/view-report.js"></script>
+</body>
+</html>

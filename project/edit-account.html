@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Account - IMNSB Employee Leave Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="img/logo.png" alt="IMNSB Logo" class="sidebar-logo">
+                <h3>IMNSB</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                </li>
+                <li>
+                    <a href="apply-leave.html"><i class="fas fa-calendar-plus"></i> Apply Leave</a>
+                </li>
+                <li>
+                    <a href="leave-history.html"><i class="fas fa-history"></i> Leave History</a>
+                </li>
+                <li class="active">
+                    <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                </li>
+                <li class="logout">
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Edit Account Information</h2>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span id="userName">John Doe</span>
+                        <div class="user-avatar">
+                            <img src="img/avatar.png" alt="User Avatar" id="headerAvatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-body">
+                <div class="settings-container">
+                    <div class="settings-form-card">
+                        <form id="editAccountForm">
+                            <div class="profile-picture-section">
+                                <div class="profile-picture">
+                                    <img src="img/avatar.png" alt="Profile Picture" id="profilePreview">
+                                    <div class="profile-picture-overlay">
+                                        <label for="profilePicture" class="upload-btn">
+                                            <i class="fas fa-camera"></i>
+                                            Change Photo
+                                        </label>
+                                        <input type="file" id="profilePicture" accept="image/*" style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <a href="settings.html" class="btn btn-secondary">Cancel</a>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/edit-account.js"></script>
+</body>
+</html>

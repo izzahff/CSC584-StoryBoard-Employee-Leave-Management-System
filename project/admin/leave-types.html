@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Types - IMNSB Employee Leave Management System</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Admin Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="../img/logo.png" alt="IMNSB Logo" class="sidebar-logo">
+                <h3>IMNSB Admin</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                </li>
+                <li>
+                    <a href="approval-managers.html"><i class="fas fa-user-tie"></i> Approval Managers</a>
+                </li>
+                <li>
+                    <a href="employees.html"><i class="fas fa-users"></i> Employees</a>
+                </li>
+                <li class="active">
+                    <a href="leave-types.html"><i class="fas fa-list-alt"></i> Leave Types</a>
+                </li>
+                <li>
+                    <a href="leave-requests.html"><i class="fas fa-clipboard-list"></i> Leave Requests</a>
+                </li>
+                <li>
+                    <a href="view-report.html"><i class="fas fa-chart-bar"></i> View Report</a>
+                </li>
+                <li>
+                    <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                </li>
+                <li class="logout">
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Leave Types</h2>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span id="userName">Admin Name</span>
+                        <div class="user-avatar">
+                            <img src="../img/avatar.png" alt="Admin Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-body">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3>Leave Types List</h3>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Add New Leave Type
+                        </button>
+                    </div>
+                    <div class="admin-card-content">
+                        <div class="table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Leave Type</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leaveTypesTable">
+                                    <!-- Will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="../js/admin/leave-types.js"></script>
+</body>
+</html>

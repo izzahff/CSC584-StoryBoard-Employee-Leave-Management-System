@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Profile - IMNSB Employee Leave Management System</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/manager.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Manager Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="../img/logo.png" alt="IMNSB Logo" class="sidebar-logo">
+                <h3>IMNSB Manager</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                </li>
+                <li>
+                    <a href="leave-requests.html"><i class="fas fa-clipboard-list"></i> Leave Requests</a>
+                </li>
+                <li>
+                    <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                </li>
+                <li class="logout">
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Profile</h2>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span id="userName">Manager Name</span>
+                        <div class="user-avatar">
+                            <img src="../img/avatar.png" alt="Manager Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-body">
+                <div class="profile-container">
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <h3>Profile Information</h3>
+                        </div>
+                        <div class="profile-content">
+                            <div class="profile-info">
+                                <div class="profile-avatar">
+                                    <img src="../img/avatar.png" alt="Manager Avatar">
+                                </div>
+                                <div class="profile-details">
+                                    <div class="profile-item">
+                                        <span class="profile-label">ID:</span>
+                                        <span class="profile-value" id="profileId">MGR001</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-label">Name:</span>
+                                        <span class="profile-value" id="profileName">Project Manager</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-label">Email:</span>
+                                        <span class="profile-value" id="profileEmail">manager@imnsb.com</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-label">Phone:</span>
+                                        <span class="profile-value" id="profilePhone">+1234567890</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/manager/profile.js"></script>
+</body>
+</html>

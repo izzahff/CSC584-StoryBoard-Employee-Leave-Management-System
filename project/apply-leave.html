@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Leave - IMNSB Employee Leave Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="img/logo.png" alt="IMNSB Logo" class="sidebar-logo">
+                <h3>IMNSB</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                </li>
+                <li class="active">
+                    <a href="apply-leave.html"><i class="fas fa-calendar-plus"></i> Apply Leave</a>
+                </li>
+                <li>
+                    <a href="leave-history.html"><i class="fas fa-history"></i> Leave History</a>
+                </li>
+                <li>
+                    <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                </li>
+                <li class="logout">
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Apply Leave</h2>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span id="userName">John Doe</span>
+                        <div class="user-avatar">
+                            <img src="img/avatar.png" alt="User Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-body">
+                <div class="leave-application-container">
+                    <div class="leave-application-card">
+                        <div class="leave-application-header">
+                            <h3>Leave Application Form</h3>
+                        </div>
+                        <div class="leave-application-content">
+                            <form id="leaveApplicationForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="leaveType">Leave Type</label>
+                                        <select id="leaveType" name="leaveType" required>
+                                            <option value="" disabled selected>Select Leave Type</option>
+                                            <option value="annual">Annual Leave</option>
+                                            <option value="sick">Sick Leave</option>
+                                            <option value="maternity">Maternity Leave</option>
+                                            <option value="paternity">Paternity Leave</option>
+                                            <option value="bereavement">Bereavement Leave</option>
+                                            <option value="unpaid">Unpaid Leave</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="leaveReason">Leave Reason</label>
+                                        <select id="leaveReason" name="leaveReason" required>
+                                            <option value="" disabled selected>Select Leave Reason</option>
+                                            <option value="vacation">Vacation</option>
+                                            <option value="medical">Medical Treatment</option>
+                                            <option value="family">Family Matter</option>
+                                            <option value="emergency">Emergency</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="durationType">Duration Type</label>
+                                        <select id="durationType" name="durationType" required>
+                                            <option value="full">Full Day</option>
+                                            <option value="half">Half Day</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id="shiftGroup" style="display: none;">
+                                        <label for="shift">Shift</label>
+                                        <select id="shift" name="shift">
+                                            <option value="am">AM Shift (Morning)</option>
+                                            <option value="pm">PM Shift (Afternoon)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="startDate">Start Date</label>
+                                        <input type="date" id="startDate" name="startDate" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="endDate">End Date</label>
+                                        <input type="date" id="endDate" name="endDate" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="leaveDescription">Description</label>
+                                    <textarea id="leaveDescription" name="leaveDescription" rows="4" placeholder="Provide additional details about your leave request"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="attachments">Attachments (if any)</label>
+                                    <div class="file-upload">
+                                        <input type="file" id="attachments" name="attachments" multiple>
+                                        <label for="attachments" class="file-upload-label">
+                                            <i class="fas fa-cloud-upload-alt"></i> Choose Files
+                                        </label>
+                                        <div id="fileList" class="file-list"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-buttons">
+                                    <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+                                    <button type="button" id="saveBtn" class="btn btn-info">Save Draft</button>
+                                    <button type="button" id="printBtn" class="btn btn-secondary">
+                                        <i class="fas fa-print"></i> Print
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/leave.js"></script>
+</body>
+</html>

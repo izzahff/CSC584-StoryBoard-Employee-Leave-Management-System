@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - IMNSB Employee Leave Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="img/logo.png" alt="IMNSB Logo" class="sidebar-logo">
+                <h3>IMNSB</h3>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                </li>
+                <li>
+                    <a href="apply-leave.html"><i class="fas fa-calendar-plus"></i> Apply Leave</a>
+                </li>
+                <li>
+                    <a href="leave-history.html"><i class="fas fa-history"></i> Leave History</a>
+                </li>
+                <li>
+                    <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                </li>
+                <li class="logout">
+                    <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Profile</h2>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span id="userName">John Doe</span>
+                        <div class="user-avatar">
+                            <img src="img/avatar.png" alt="User Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-body">
+                <!-- Profile Information -->
+                <div class="profile-container">
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <h3>Profile Information</h3>
+                        </div>
+                        <div class="profile-content">
+                            <div class="profile-info">
+                                <div class="profile-avatar">
+                                    <img src="img/avatar.png" alt="User Avatar">
+                                </div>
+                                <div class="profile-details">
+                                    <div class="profile-item">
+                                        <span class="profile-label">ID:</span>
+                                        <span class="profile-value" id="profileId">1234</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-label">Name:</span>
+                                        <span class="profile-value" id="profileName">John Doe</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-label">Email:</span>
+                                        <span class="profile-value" id="profileEmail">johndoe@imnsb.com</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-label">Phone:</span>
+                                        <span class="profile-value" id="profilePhone">+1234567890</span>
+                                    </div>
+                                    <div class="profile-item">
+                                        <span class="profile-label">Join Date:</span>
+                                        <span class="profile-value" id="profileJoinDate">01/01/2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leave Statistics -->
+                <div class="dashboard-summary mt-4">
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Total Leave Balance</h3>
+                            <p id="totalLeaveEntitled">21 days</p>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-calendar-minus"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Leave Used</h3>
+                            <p id="leaveUsedCount">5 days</p>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Pending Requests</h3>
+                            <p id="pendingLeaveCount">1</p>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Approved Leaves</h3>
+                            <p id="approvedLeaveCount">3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Leave Applications -->
+                <div class="recent-leaves mt-4">
+                    <h3>Recent Leave Applications</h3>
+                    <div class="table-container">
+                        <table class="leave-table">
+                            <thead>
+                                <tr>
+                                    <th>Leave Type</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Duration</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentLeavesTable">
+                                <!-- This will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/profile.js"></script>
+</body>
+</html>
